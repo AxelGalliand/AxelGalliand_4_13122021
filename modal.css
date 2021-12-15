@@ -26,6 +26,15 @@ p {
   padding: 0.5vw;
 }
 
+.hidden {
+  display: none;
+}
+
+.formData span {
+  color: #ff0000;
+  font-size: 15px;
+}
+
 img {
   padding-right: 1rem;
 }
