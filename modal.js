@@ -32,21 +32,19 @@ function closeModal() {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function checkFirstName() {
-  const firstNameInput = document.getElementById("first").value;
-  const $firstErrorMsg = document.querySelector(".firstNameErrorMsg");
-  const firstNameValid = firstNameInput.trim().length >= 2;
+// function check first name
+function checkName() {
+  const firstInput = document.getElementById("first").value;
+  const $firstErrorMsg = document.querySelector(".firstErrorMsg");
+  const firstValid = firstInput.trim().length >= 2;
 
-  if (firstNameValid) {
+  if (firstValid) {
     $firstErrorMsg.classList.add("hidden");
   } else {
     $firstErrorMsg.classList.remove("hidden");
   }
-  return firstNameValid;
-}
 
-
-function checkLastName() {
+// function check Last Name
   const lastNameInput = document.getElementById("last").value;
   const $lastErrorMsg = document.querySelector(".lastNameErrorMsg");
   const lastNameValid = lastNameInput.trim().length >= 2;
@@ -56,11 +54,8 @@ function checkLastName() {
   } else {
     $lastErrorMsg.classList.remove("hidden");
   }
-  return lastNameValid;
-}
-
-
-function checkEmail() {
+  
+// function check email
   const emailInput = document.getElementById("email").value;
   const regExMail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   const $emailErrorMsg = document.querySelector(".emailErrorMsg");
@@ -71,11 +66,8 @@ function checkEmail() {
   } else {
     $emailErrorMsg.classList.remove("hidden")
   }
-  return emailValid
-}
 
-
-function checkAge() {
+// function check age 
   const ageInput = document.getElementById("birthdate").value;
   const regExAge = /(19\d\d|20[0-3])(-\d\d){2}/;
   const $ageErrorMsg = document.querySelector(".birthdateErrorMsg");
@@ -86,11 +78,8 @@ function checkAge() {
   } else {
     $ageErrorMsg.classList.remove("hidden")
   }
-  return ageValid
-}
-
-
-function checkTournamentCount() {
+  
+// function check tournament number
   const tournamentInput = document.getElementById("quantity").value;
   const $tournamentErrorMsg = document.querySelector(".numberErrorMsg");
   const tournamentNumbertValid = tournamentInput.length > 0;
@@ -100,11 +89,8 @@ function checkTournamentCount() {
   } else {
     $tournamentErrorMsg.classList.remove("hidden")
   }
-  return tournamentNumbertValid
-}
-
-
-function checkTournamentCity() {
+  
+// function check city 
   const $cityRadios = document.querySelectorAll("#radios-city .checkbox-input");
   const $tournamentCityErrorMsg = document.querySelector(".cityErrorMsg");
   let tournamentCityValid = false;
@@ -117,12 +103,9 @@ function checkTournamentCity() {
     } else {
       $tournamentCityErrorMsg.classList.remove("hidden");
     }
-  }
-  return tournamentCityValid
 }
 
-
-function checkTermsAndConditions() {
+// function check condition 
   const terms = document.querySelector("#conditionCheckbox")
   const $termsCheckMsg = document.querySelector(".conditionErrorMsg");
   const termsAreChecked = terms.checked;
@@ -132,12 +115,11 @@ function checkTermsAndConditions() {
   } else {
     $termsCheckMsg.classList.remove("hidden");
   }
-  return termsAreChecked
+  
 }
 
 
-const formValid = () => checkFirstName() && checkLastName() && checkEmail() && checkAge() && checkTournamentCount() && checkTournamentCity() && checkTermsAndConditions()
-
+const formValid = () => checkName() 
 
 $registrationForm.addEventListener("submit", function(event) {
   event.preventDefault()
