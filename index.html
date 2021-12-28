@@ -55,12 +55,13 @@
       <div class="bground">
         <div class="content ">
           <span class="close"></span>
-          <div class="modal-body" >
+          <div class="modal-body">
             <form
               name="reserve"
               action="index.html"
               method="get"
               class="registration-form "
+              id="formValid"
             >
             <div
             class="formData">
@@ -71,7 +72,7 @@
               id="first"
               name="first"
             /><br>
-                <span class="firstErrorMsg hidden">2 caractères ou plus sont demandés</span>
+                <span class="firstNameErrorMsg hidden">2 caractères ou plus sont demandés</span>
               </div>
               <div
                 class="formData">
@@ -217,6 +218,11 @@
             />
             </form>
           </div>
+          <p id="validationMessage">Meci d'avoir incrit vaux informations
+          <button class="btn-close modal-btn" id="closeValidation">
+            Fermer
+          </button>
+          </p>
         </div>
       </div>
     </main>

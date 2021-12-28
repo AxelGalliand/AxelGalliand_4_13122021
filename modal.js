@@ -29,30 +29,33 @@ modalBtnClose.forEach((btn) => btn.addEventListener("click", closeModal));
 function closeModal() {
   modalbg.style.display = "none";
 }
-
+const closeValidationBtn = document.getElementById("closeValidation")
+closeValidationBtn.addEventListener("click", function() {
+  modalbg.style.display= "none";
+})
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // function check first name
-function checkName() {
-  const firstInput = document.getElementById("first").value;
-  const $firstErrorMsg = document.querySelector(".firstErrorMsg");
-  const firstValid = firstInput.trim().length >= 2;
+function checkAll() {
+  const firstNameInput = document.getElementById("first").value;
+  const $firstNameErrorMsg = document.querySelector(".firstNameErrorMsg");
+  const firstNameValid = firstNameInput.trim().length >= 2;
 
-  if (firstValid) {
-    $firstErrorMsg.classList.add("hidden");
+  if (firstNameValid) {
+    $firstNameErrorMsg.classList.add("hidden");
   } else {
-    $firstErrorMsg.classList.remove("hidden");
+    $firstNameErrorMsg.classList.remove("hidden");
   }
 
 // function check Last Name
   const lastNameInput = document.getElementById("last").value;
-  const $lastErrorMsg = document.querySelector(".lastNameErrorMsg");
+  const $lastNameErrorMsg = document.querySelector(".lastNameErrorMsg");
   const lastNameValid = lastNameInput.trim().length >= 2;
 
   if (lastNameValid) {
-    $lastErrorMsg.classList.add("hidden");
+    $lastNameErrorMsg.classList.add("hidden");
   } else {
-    $lastErrorMsg.classList.remove("hidden");
+    $lastNameErrorMsg.classList.remove("hidden");
   }
   
 // function check email
@@ -115,19 +118,22 @@ function checkName() {
   } else {
     $termsCheckMsg.classList.remove("hidden");
   }
-  
+
+  if (firstNameValid && lastNameValid && emailValid && ageValid && tournamentCityValid && termsAreChecked)
+  return true
 }
 
 
-const formValid = () => checkName() 
+const formValid = () => checkAll() 
 
 $registrationForm.addEventListener("submit", function(event) {
   event.preventDefault()
 // if all booleans are true
   if (formValid()) {
-   
-    // reset the content
-    
-    // $registrationForm.reset();
+   const formValid = document.getElementById("formValid")
+    formValid.style.display = "none"
+
+    const validationMessage = document.getElementById("validationMessage")
+    validationMessage.style.display = "block"
   } 
 })
