@@ -15,7 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   background-image: url("background.png");
-  font-family: var(--font-default);
+  font-family: var(--font-default);;
   font-size: 18px;
   max-width: 1300px;
   margin: 0 auto;
@@ -523,8 +523,6 @@ footer {
     overflow-wrap:normal;
     justify-content: start;
 
-
-    
   }
   .hero-img img {
     border-radius: 10px;
@@ -545,7 +543,7 @@ footer {
 .hero-headline {
     font-size: 60px;
   }
-
+}
 #formValid {
   display: block;
 }
@@ -570,4 +568,5 @@ footer {
   to {
     opacity: 1;
   }
-}
+ }
+
